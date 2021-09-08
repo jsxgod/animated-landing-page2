@@ -1,6 +1,8 @@
+import { NavBar } from "./components";
+
 function App() {
   return (
-    <div>Cleaned up</div>
+    <NavBar />
   );
 }
 
