@@ -1,9 +1,12 @@
-import { NavBar } from "./components";
+import { Banner, NavBar } from "./components";
 import "./sass/main.scss";
 
 function App() {
   return (
-    <NavBar />
+    <>
+      <NavBar />
+      <Banner />
+    </>
   );
 }
 
