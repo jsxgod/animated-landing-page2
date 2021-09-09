@@ -1,90 +1,91 @@
 .navbar {
-    font-size: 1.8rem;
-    height: 156px;
+  font-size: 1.8rem;
+  height: 156px;
+  display: flex;
+  justify-content: center;
+  padding: 0 108px;
+  color: $black;
+  @media (max-width: $media-medium) {
+    padding: 0 72px;
+    font-size: 1.6rem;
+  }
+  @media (max-width: $media-xsmall) {
+    padding: 0 12px;
+    height: 96px;
+    font-size: 1.2rem;
+  }
+
+  .navbar-inner {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    padding: 0 108px;
-    color: $black;
-    @media (max-width: $media-medium) {
-        padding: 0 72px;
-        font-size: 1.6rem;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      font-weight: 700;
+      font-size: 3.6rem;
+      @media (max-width: $media-medium) {
+        font-size: 3.2rem;
+        flex: 4;
+      }
     }
-    @media (max-width: $media-xsmall) {
-        padding: 0 12px;
-        height: 96px;
-        font-size: 1.2rem;
-    }
+    .nav {
+      @media (max-width: $media-medium) {
+        display: none;
+      }
+      display: flex;
+      align-items: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
 
-    .navbar-inner {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .logo {
-            font-weight: 700;
-            font-size: 3.6rem;
-            @media (max-width: $media-medium) {
-                font-size: 3.2rem;
-                flex: 4;
-            }
+      li {
+        list-style: none;
+        margin: 0 40px;
+        a {
+          text-decoration: none;
+          color: $black;
+          white-space: nowrap;
         }
-        .nav {
-            @media (max-width: $media-medium) {
-                display: none;
-            }
-            display: flex;
-            align-items: center;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-
-            li {
-                list-style: none;
-                margin: 0 40px;
-                a {
-                    text-decoration: none;
-                    color: $black;
-                    white-space: nowrap;
-                }
-            }
-        }
-        .contact {
-            @media (max-width: $media-medium) {
-                flex: 1;
-            }
-            a {
-                text-decoration: none;
-                color: $black;
-                border-bottom: 2px solid $black;
-                white-space: nowrap;
-                @media (max-width: $media-xsmall) {
-                    border: none;
-                }
-            }
-        }
-        .menu {
-            height: 56px;
-            width: 56px;
-            border-radius: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-            cursor: pointer;
-            &:hover {
-                background: darken($color: $white, $amount: 12);
-            }
-            @media (min-width: $media-medium) {
-                display: none
-            }
-            span {
-                width: 20px;
-                height: 3px;
-                margin: 2px 0;
-                background: $black;
-                display: block;
-            }
-        }
+      }
     }
+    .contact {
+      @media (max-width: $media-medium) {
+        flex: 1;
+      }
+      a {
+        text-decoration: none;
+        color: $black;
+        padding-bottom: 10px;
+        border-bottom: 2px solid $black;
+        white-space: nowrap;
+        @media (max-width: $media-xsmall) {
+          border: none;
+        }
+      }
+    }
+    .menu {
+      height: 56px;
+      width: 56px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+      cursor: pointer;
+      &:hover {
+        background: darken($color: $white, $amount: 12);
+      }
+      @media (min-width: $media-medium) {
+        display: none;
+      }
+      span {
+        width: 20px;
+        height: 3px;
+        margin: 2px 0;
+        background: $black;
+        display: block;
+      }
+    }
+  }
 }
