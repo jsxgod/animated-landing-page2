@@ -1,10 +1,17 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 const Banner = () => {
+  const [playAnimation, setPlayAnimation] = useState(false);
+
+  useEffect(() => {
+    setPlayAnimation(true);
+  }, []);
+
   return (
     <div className="banner">
       <TopRow title={"brand"} />
-      <CenterRow title={"experience"} />
+      <CenterRow title={"experience"} animationFlag={playAnimation} />
       <BottomRow title={"studio"} />
     </div>
   );
@@ -34,13 +41,15 @@ const TopRow = ({ title }) => {
   );
 };
 
-const CenterRow = ({ title }) => {
+const CenterRow = ({ title, animationFlag }) => {
   return (
-    <div className="banner-row">
-      <AnimatedLetters title={title} />
-      <AnimatedLetters title={title} />
-      <AnimatedLetters title={title} />
-      <AnimatedLetters title={title} />
+    <div className={`banner-row animation ${animationFlag && "animate"}`}>
+      <div className="animation-inner">
+        <AnimatedLetters title={title} />
+        <AnimatedLetters title={title} />
+        <AnimatedLetters title={title} />
+        <AnimatedLetters title={title} />
+      </div>
     </div>
   );
 };
