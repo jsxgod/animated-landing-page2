@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-const Banner = () => {
+const Banner = ({ loading }) => {
   const [playAnimation, setPlayAnimation] = useState(false);
 
   useEffect(() => {
@@ -9,11 +9,23 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="banner">
-      <TopRow title={"brand"} />
-      <CenterRow title={"experience"} animationFlag={playAnimation} />
-      <BottomRow title={"studio"} />
-    </div>
+    <>
+      <div className="banner">
+        <TopRow title={"brand"} />
+        <CenterRow title={"experience"} animationFlag={playAnimation} />
+        <BottomRow title={"studio"} />
+      </div>
+      <div>
+        {!loading && (
+          <div className="transition-image final">
+            <img
+              src={process.env.PUBLIC_URL + `/images/image-2.jpg`}
+              alt="studio-2.jpg"
+            />
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
