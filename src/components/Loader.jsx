@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { ImageBlock } from "./";
+import React from "react";
 import { motion } from "framer-motion";
 
 const variants = {
@@ -40,10 +39,6 @@ const Loader = ({ setLoading }) => {
             layoutId="main-image"
           />
         </motion.div>
-        <ImageBlock id="image-1" />
-        <ImageBlock id="image-3" />
-        <ImageBlock id="image-4" />
-        <ImageBlock id="image-5" />
       </motion.div>
     </div>
   );

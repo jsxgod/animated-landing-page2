@@ -103,7 +103,8 @@
     display: block;
     top: -128px;
     position: relative;
-    width: 90%;
+    padding-left: 10%;
+    padding-right: 10%;
     margin: 0 auto;
     z-index: -100;
     @media (max-width: $media-xsmall) {

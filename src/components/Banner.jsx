@@ -30,7 +30,7 @@ const Banner = ({ loading }) => {
   useEffect(() => {
     setTimeout(() => {
       setPlayAnimation(true);
-    }, 2000);
+    }, 2500);
   }, []);
 
   return (

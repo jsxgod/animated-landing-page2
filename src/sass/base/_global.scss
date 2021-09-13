@@ -1,3 +1,5 @@
 body {
-    background: $background;
-  }
+  background: $background;
+  max-width: 100%;
+  overflow-x: hidden;
+}
