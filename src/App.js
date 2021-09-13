@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { Banner, NavBar, Loader } from "./components";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import "./sass/main.scss";
 
 function App() {
@@ -13,19 +13,21 @@ function App() {
   }, [loading]);
 
   return (
-    <AnimatePresence>
-      {loading ? (
-        <motion.div key='loader'>
-          <Loader setLoading={setLoading} />
-        </motion.div>
-      ) : (
-        <>
-        <NavBar />
-        <Banner loading={loading}/>
-        </>
-      )
-    }
-    </AnimatePresence>
+    <AnimateSharedLayout type="crossfade">
+      <AnimatePresence>
+        {loading ? (
+          <motion.div key='loader'>
+            <Loader setLoading={setLoading} />
+          </motion.div>
+        ) : (
+          <>
+          <NavBar />
+          <Banner loading={loading}/>
+          </>
+        )
+      }
+      </AnimatePresence>
+    </AnimateSharedLayout>
   );
 }
 

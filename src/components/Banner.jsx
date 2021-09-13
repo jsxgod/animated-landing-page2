@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Banner = ({ loading }) => {
   const [playAnimation, setPlayAnimation] = useState(false);
@@ -17,12 +18,17 @@ const Banner = ({ loading }) => {
       </div>
       <div>
         {!loading && (
-          <div className="transition-image final">
-            <img
+          <motion.div className="transition-image final">
+            <motion.img
               src={process.env.PUBLIC_URL + `/images/image-2.jpg`}
               alt="studio-2.jpg"
+              layoutId="main-image"
+              transition={{
+                ease: [0.6, 0.01, -0.05, 0.9],
+                duration: 1.6,
+              }}
             />
-          </div>
+          </motion.div>
         )}
       </div>
     </>

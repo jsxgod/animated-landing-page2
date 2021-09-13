@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const variants = {
   show: {
     transition: {
-      staggerChildren: 0.7,
+      staggerChildren: 0.5,
     },
   },
 };
@@ -34,9 +34,10 @@ const Loader = ({ setLoading }) => {
         onAnimationComplete={() => setLoading(false)}
       >
         <motion.div className="transition-image" variants={image_variants}>
-          <img
+          <motion.img
             src={process.env.PUBLIC_URL + `/images/image-2.jpg`}
             alt="random alr"
+            layoutId="main-image"
           />
         </motion.div>
         <ImageBlock id="image-1" />

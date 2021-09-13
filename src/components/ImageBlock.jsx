@@ -17,10 +17,10 @@ const variants = {
   },
   exit: {
     opacity: 0,
-    y: -50,
+    y: -150,
     transition: {
       ease: "easeInOut",
-      duration: 0.8,
+      duration: 0.5,
     },
   },
 };
