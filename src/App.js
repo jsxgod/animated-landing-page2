@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { Banner, NavBar, Loader } from "./components";
+import { AnimatePresence, motion } from "framer-motion";
 import "./sass/main.scss";
 
 function App() {
@@ -12,9 +13,11 @@ function App() {
   }, [loading]);
 
   return (
-    <>
+    <AnimatePresence>
       {loading ? (
-        <Loader setLoading={setLoading} />
+        <motion.div key='loader'>
+          <Loader setLoading={setLoading} />
+        </motion.div>
       ) : (
         <>
         <NavBar />
@@ -22,7 +25,7 @@ function App() {
         </>
       )
     }
-    </>
+    </AnimatePresence>
   );
 }
 
