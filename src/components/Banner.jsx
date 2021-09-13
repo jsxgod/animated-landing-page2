@@ -28,7 +28,9 @@ const Banner = ({ loading }) => {
   const [playAnimation, setPlayAnimation] = useState(false);
 
   useEffect(() => {
-    setPlayAnimation(true);
+    setTimeout(() => {
+      setPlayAnimation(true);
+    }, 2000);
   }, []);
 
   return (
@@ -57,10 +59,10 @@ const Banner = ({ loading }) => {
   );
 };
 
-const AnimatedLetters = ({ title }) => (
+const AnimatedLetters = ({ title, disabled }) => (
   <motion.span
     className="row-title"
-    variants={variants}
+    variants={disabled ? null : variants}
     initial="initial"
     animate="animate"
   >
@@ -101,10 +103,10 @@ const CenterRow = ({ title, animationFlag }) => {
   return (
     <div className={`banner-row animation ${animationFlag && "animate"}`}>
       <div className="animation-inner">
+        <AnimatedLetters title={title} disabled />
         <AnimatedLetters title={title} />
-        <AnimatedLetters title={title} />
-        <AnimatedLetters title={title} />
-        <AnimatedLetters title={title} />
+        <AnimatedLetters title={title} disabled />
+        <AnimatedLetters title={title} disabled />
       </div>
     </div>
   );
