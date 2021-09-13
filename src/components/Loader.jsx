@@ -5,7 +5,19 @@ import { motion } from "framer-motion";
 const variants = {
   show: {
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.7,
+    },
+  },
+};
+
+const image_variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.83, 0, 0.17, 1],
+      duration: 1.6,
     },
   },
 };
@@ -21,12 +33,12 @@ const Loader = ({ setLoading }) => {
         exit="exit"
         onAnimationComplete={() => setLoading(false)}
       >
-        <div className="transition-image">
+        <motion.div className="transition-image" variants={image_variants}>
           <img
             src={process.env.PUBLIC_URL + `/images/image-2.jpg`}
             alt="random alr"
           />
-        </div>
+        </motion.div>
         <ImageBlock id="image-1" />
         <ImageBlock id="image-3" />
         <ImageBlock id="image-4" />

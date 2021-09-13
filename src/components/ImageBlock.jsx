@@ -5,19 +5,19 @@ import { motion } from "framer-motion";
 const variants = {
   hidden: {
     opacity: 0,
-    y: 100,
+    y: 50,
   },
   show: {
     opacity: 1,
     y: 0,
     transition: {
-      ease: [0.65, 0, 0.35, 1],
+      ease: [0.16, 1, 0.3, 1],
       duration: 1.6,
     },
   },
   exit: {
     opacity: 0,
-    y: -100,
+    y: -50,
     transition: {
       ease: "easeInOut",
       duration: 0.8,
