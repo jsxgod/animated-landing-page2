@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu } from ".";
+import { animateScroll as scroll } from "react-scroll";
 
 const NavBar = () => {
   const [hamburgerMenuOpened, setHamburgerMenuOpened] = useState(false);
@@ -17,7 +18,17 @@ const NavBar = () => {
         }}
       >
         <div className="navbar-inner">
-          <div className="logo">CMPN.</div>
+          <div
+            className="logo"
+            onClick={() =>
+              scroll.scrollToTop({
+                duration: 1000,
+                smooth: "easeInOutQuint",
+              })
+            }
+          >
+            CMPN.
+          </div>
           <nav className="nav">
             <li>
               <a href="/design">Design</a>
