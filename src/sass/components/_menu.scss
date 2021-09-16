@@ -1,8 +1,9 @@
 .hamburger-menu {
   position: absolute;
+  top: 96px;
   left: 0;
   background-color: $background;
-  height: 100vh;
+  height: calc(100vh - #{$navbar-xsmall-height});
   width: 0;
   z-index: 200;
   overflow: hidden;

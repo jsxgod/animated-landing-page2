@@ -57,8 +57,8 @@ const NavBar = () => {
             <span></span>
           </div>
         </div>
+        <Menu opened={hamburgerMenuOpened} />
       </motion.div>
-      <Menu opened={hamburgerMenuOpened} />
     </>
   );
 };
