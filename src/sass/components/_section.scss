@@ -1,0 +1,55 @@
+.section {
+  background-color: $background;
+  .header {
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+      z-index: 1;
+      font-size: 28rem;
+      font-weight: 500;
+    }
+  }
+  .image-wrapper {
+    display: grid;
+    grid-auto-rows: 98% 2%;
+    z-index: 0;
+    position: relative;
+    top: -12rem;
+    width: 100vw;
+    height: 100vh;
+    padding: 0 5%;
+    img {
+      height: 100%;
+      width: 100%;
+      grid-row: 1;
+    }
+    .animated-footer {
+      position: relative;
+      display: flex;
+      grid-row: 2;
+      overflow: hidden;
+      span {
+        @for $i from 2 through 5 {
+          &:nth-child(#{$i}) {
+            left: ($i - 1) * 25%;
+          }
+        }
+        position: absolute;
+        width: 25%;
+        animation: footer-marquee 3s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes footer-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}

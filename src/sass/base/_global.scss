@@ -3,3 +3,8 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+.site-content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
