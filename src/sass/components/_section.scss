@@ -13,23 +13,69 @@
   }
   .image-wrapper {
     display: grid;
-    grid-auto-rows: 98% 2%;
+    grid-template-areas:
+      "top-left top top top-right"
+      "middle-left info middle middle-right"
+      "bottom-left bottom bottom bottom-right"
+      "footer footer footer footer";
+    grid-auto-rows: 1fr 2fr 1fr 2%;
+    grid-auto-columns: 0.5fr 1.5fr 1fr 1fr;
     z-index: 0;
     position: relative;
     top: -12rem;
     width: 100vw;
     height: 100vh;
     padding: 0 5%;
+    .info-wrapper {
+      grid-area: info;
+      display: grid;
+      grid-template-areas:
+        "top top top"
+        "bottom info-content info-content";
+      grid-auto-rows: 2fr 5fr;
+      grid-auto-columns: 2fr 5fr;
+      .info-circle {
+        grid-row: 1 / 3;
+        grid-column: 1 / 3;
+        background: rgba($background, 0.75);
+        border-radius: 100%;
+      }
+      .info-header {
+        grid-area: top;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .info-content {
+        grid-area: info-content;
+        display: flex;
+        justify-content: right;
+        p {
+          color: $black;
+          font-size: 1.8rem;
+        }
+      }
+    }
+    &.reverse {
+      grid-template-areas:
+        "top-left top top top-right"
+        "middle-left middle info middle-right"
+        "bottom-left bottom bottom bottom-right"
+        "footer footer footer footer";
+      grid-auto-columns: 1fr 1fr 1.5fr 0.5fr;
+    }
     img {
+      grid-row: top / bottom;
+      grid-column: 1 / 5;
       height: 100%;
       width: 100%;
-      grid-row: 1;
     }
     .animated-footer {
       position: relative;
       display: flex;
-      grid-row: 2;
       overflow: hidden;
+      grid-row: footer;
+      grid-column: 1 / 5;
       span {
         @for $i from 2 through 5 {
           &:nth-child(#{$i}) {

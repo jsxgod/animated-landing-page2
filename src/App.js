@@ -25,7 +25,7 @@ function App() {
           <div className="site-content-wrapper">
             <Banner loading={loading}/>
             <Section title={"design"}/>
-            <Section title={"strategy"}/>
+            <Section title={"strategy"} reverse={true}/>
           </div>
           </>
         )
