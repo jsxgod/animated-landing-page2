@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import { Banner, NavBar, Loader } from "./components";
+import { Banner, NavBar, Loader, Section } from "./components";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import "./sass/main.scss";
 
@@ -22,7 +22,11 @@ function App() {
         ) : (
           <>
           <NavBar />
-          <Banner loading={loading}/>
+          <div className="site-content-wrapper">
+            <Banner loading={loading}/>
+            <Section title={"design"}/>
+            <Section title={"strategy"}/>
+          </div>
           </>
         )
       }
